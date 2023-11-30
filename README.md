@@ -61,3 +61,13 @@ or to run using the Playwright user interface:
 npm run test:local:ui
 ```
 
+## Debugging
+
+Playwright has [handy debugging](https://playwright.dev/docs/running-tests#debug-tests-in-ui-mode) to allow you step through your tests and use a "Pick locator" tool.
+
+Run with a command like:
+
+```bash
+npx playwright test apply.spec.ts --project=local --debug
+```
+

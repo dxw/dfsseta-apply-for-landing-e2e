@@ -1,0 +1,43 @@
+{
+  "name": "dxw-dfsseta-apply-for-landing-e2e",
+  "version": "1.0.0",
+  "description": "End-to-end tests for the dxw 'Apply for landing' example apps",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint . --cache --max-warnings 0 ",
+    "lint:fix": "eslint . --cache --max-warnings 0 --fix",
+    "test": "npx playwright test --project=setupDeployed --project=deployed",
+    "test:ui": "npm run test -- --ui",
+    "test:local": "npx playwright test --project=setupLocal --project=local",
+    "test:local:ui": "npm run test:local -- --ui",
+    "install-playwright": "npx playwright install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dxw/dfsseta-apply-for-landing-e2e.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dxw/dfsseta-apply-for-landing-e2e/issues"
+  },
+  "homepage": "https://github.com/dxw/dfsseta-apply-for-landing-e2e#readme",
+  "dependencies": {
+    "@playwright/test": "^1.36.2",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "date-fns": "^2.30.0",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.24.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-import-resolver-typescript": "^3.5.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-no-only-tests": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "eslint-plugin-playwright": "^0.18.0",
+    "eslint-plugin-prettier": "^5.0.0-alpha.2"
+  }
+}

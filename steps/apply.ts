@@ -33,3 +33,8 @@ export const completeDatesStage = async (page: Page) => {
   await page.getByRole('button', { name: 'Save and continue' }).click()
 }
 
+export const completeRegistrationIdStage = async (page: Page) => {
+  await page.getByLabel('Registration ID').fill('ABC123A')
+  await page.getByRole('button', { name: 'Save and continue' }).click()
+}
+

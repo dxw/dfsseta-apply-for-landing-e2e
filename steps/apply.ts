@@ -1,5 +1,8 @@
 import { Page } from '@playwright/test'
-import { fillDateFieldInGroup } from './stepHelpers.ts'
+import {
+  fillDateFieldInGroup,
+  expectToSeeAllQuestionsAndAnswers
+} from './stepHelpers.ts'
 
 export const startAnApplication = async (page: Page) => {
   await page.goto('/')
@@ -43,5 +46,10 @@ export const completePersonalDetailsStage = async (page: Page) => {
   await page.getByLabel('Email address').fill('roger@example.com')
   await page.getByLabel('Licence ID').fill('123ABC00')
   await page.getByRole('button', { name: 'Save and continue' }).click()
+}
+
+export const completeCheckYourAnswersStage = async (page: Page) => {
+  await expectToSeeAllQuestionsAndAnswers(page)
+  await page.getByRole('button', { name: 'Confirm and apply' }).click()
 }
 

@@ -1,5 +1,7 @@
 name: Playwright Tests
 on:
+  push:
+    branches: [ main ]
   schedule:
     # * is a special character in YAML we quote this string
     #   (At 5:15am on Monday through Saturday)

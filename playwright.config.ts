@@ -11,8 +11,9 @@ export default defineConfig({
   reporter: 'html',
   timeout: process.env.CI ? 5 * 60 * 1000 : 2 * 60 * 1000,
   use: {
-    trace: 'on-first-retry',
-    video: 'on-first-retry',
+    trace: 'on',
+    video: 'on',
+    screenshot: 'on'
   },
   projects: [
     {

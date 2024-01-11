@@ -38,3 +38,10 @@ export const completeRegistrationIdStage = async (page: Page) => {
   await page.getByRole('button', { name: 'Save and continue' }).click()
 }
 
+export const completePersonalDetailsStage = async (page: Page) => {
+  await page.getByLabel('Full name').fill('Roger Smith')
+  await page.getByLabel('Email address').fill('roger@example.com')
+  await page.getByLabel('Licence ID').fill('123ABC00')
+  await page.getByRole('button', { name: 'Save and continue' }).click()
+}
+

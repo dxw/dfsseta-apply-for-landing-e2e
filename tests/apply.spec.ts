@@ -4,6 +4,7 @@ import {
   startAnApplication,
   completeDatesStage,
   completeRegistrationIdStage,
+  completePersonalDetailsStage,
 } from '../steps/apply'
 
 test('Apply for landing', async ({ page }) => {
@@ -11,5 +12,6 @@ test('Apply for landing', async ({ page }) => {
   await completeDestinationStage(page)
   await completeDatesStage(page)
   await completeRegistrationIdStage(page)
-  await expect(page.getByText('Your personal details')).toBeVisible()
+  await completePersonalDetailsStage(page)
+  await expect(page.getByText('Check your answers')).toBeVisible()
 });

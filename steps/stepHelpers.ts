@@ -13,17 +13,19 @@ const expectToSeeQuestionAndAnswer = async(page: Page, qAndA: QuestionAndAnswer)
 }
 
 export const expectToSeeAllQuestionsAndAnswers = async(page: Page) => {
+  const nextYear = (new Date().getFullYear() + 1).toString()
+
   await expectToSeeQuestionAndAnswer(page, {
     question: 'Destination',
     answer: 'Mars'
   } )
   await expectToSeeQuestionAndAnswer(page, {
     question: 'Requested landing date',
-    answer: '3 August 2024'
+    answer: `10 August ${nextYear}`
   })
   await expectToSeeQuestionAndAnswer(page, {
     question: 'Requested departure date',
-    answer: '27 August 2024'
+    answer: `17 August ${nextYear}`
   })
   await expectToSeeQuestionAndAnswer(page, {
     question: 'Registration ID',

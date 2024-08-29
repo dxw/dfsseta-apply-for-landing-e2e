@@ -15,21 +15,23 @@ export const completeDestinationStage = async (page: Page) => {
 }
 
 export const completeDatesStage = async (page: Page) => {
+  const nextYear = (new Date().getFullYear() + 1).toString()
+
   await fillDateFieldInGroup(
     page,
     'Enter your requested landing date',
-    { year: '2024',
+    { year: nextYear,
       month: '8',
-      day: '3',
+      day: '10',
     },
   )
 
   await fillDateFieldInGroup(
     page,
     'Enter your requested departure date',
-    { year: '2024',
+    { year: nextYear,
       month: '8',
-      day: '27',
+      day: '17',
     },
   )
 

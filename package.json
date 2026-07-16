@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/dxw/dfsseta-apply-for-landing-e2e#readme",
   "dependencies": {
-    "@playwright/test": "^1.36.2",
+    "@playwright/test": "^1.61.1",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "date-fns": "^2.30.0",
     "dotenv": "^16.0.3",

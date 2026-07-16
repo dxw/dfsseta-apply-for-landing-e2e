@@ -6,8 +6,13 @@ on:
     # * is a special character in YAML we quote this string
     #   (At 5:15am on Monday through Saturday)
     - cron:  '15 05 * * MON-SAT'
+  workflow_run:
+    workflows: ["Trigger from main repo"]
+    types:
+      - completed
 jobs:
   test:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:

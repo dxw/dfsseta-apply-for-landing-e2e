@@ -1,4 +1,4 @@
-name: Trigger from main repo
+name: Receive trigger from main repo
 
 on:
   repository_dispatch:
@@ -8,5 +8,7 @@ jobs:
   triggerE2eTests:
     runs-on: ubuntu-latest
     steps:
-      - run: echo Trigger E2E tests
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.client_payload.ref }}
       - run: echo ${{ github.event.client_payload.sha }}
